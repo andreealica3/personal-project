@@ -35,7 +35,6 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100vh;
-  padding-top: 220px;
 
   .link-style {
     font-family: 'Poppins', sans-serif;
@@ -44,11 +43,8 @@ body {
   }
 
   .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
+    margin: 0;
     width: 100%;
-    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
