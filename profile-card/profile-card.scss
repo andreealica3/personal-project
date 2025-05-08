@@ -1,0 +1,160 @@
+@import '../assets/scss/utilities/variables';
+@import '../assets/scss/utilities/reset';
+@import '../assets/scss/utilities/animations';
+@import '../assets/scss/common/navbar';
+@import '../assets/scss/common/footer';
+
+body {
+    font-family: "Quicksand", sans-serif;
+    font-size: $size4;
+    line-height: 1;
+}
+
+.link-style {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .first-card {
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(30px);
+        animation: fadeSlideIn 0.8s ease-out forwards;
+        animation-delay: 0.2s;
+        width: 50vw;
+        gap: 1rem;
+        background-color: $color-cream;
+        border-radius: 2rem;
+
+        .card-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 180px;
+            background: linear-gradient(135deg, $color-soft-pink, $color-pink, $color-lavender);
+            background-size: 400% 400%;
+            animation: gradientMove 8s ease infinite;
+
+            .first-img {
+                width: 140px;
+                height: 140px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 4px solid #fff;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+
+        .card-body {
+            position: relative;
+            padding: 1rem 3rem;
+            margin: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            gap: 1rem;
+            font-family: 'Quicksand', sans-serif;
+
+            h2 {
+                font-family: 'Comfortaa', sans-serif;
+                font-size: $size3;
+                font-weight: 700;
+                text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.18);
+                padding-top: 1rem;
+            }
+
+            p {
+                font-weight: 600;
+                color: rgba(55, 55, 55, 0.8);
+                text-shadow: 1px 1px 1px rgba(129, 129, 129, 0.116);
+            }
+
+            h4 {
+                font-weight: 600;
+            }
+
+            h2::after, h4::after {
+                    content: '';
+                    display: block;
+                    margin: 0.3rem auto 0;
+                    width: 90%;
+                    height: 1px;
+                    background: rgba(120, 120, 120, 0.15);
+            }
+
+            .btn-cta {
+                background: none;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+
+                i {
+                    font-size: 1.6rem;
+                    background: linear-gradient(135deg, #555555, #07070777);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    color: transparent;
+
+                    text-shadow: 0 0 1px rgba(0, 0, 0, 0.178);
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.15);
+                        text-shadow: 0 0 1px rgba(0, 0, 0, 0.303);
+                    }
+                }
+            }
+
+            .social-icons {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+
+                i {
+                    font-size: 1.1rem;
+                    background: transparent !important;
+
+                    &.fa-github {
+                        color: #171515;
+                    }
+
+                    &.fa-facebook {
+                        color: #1876f2;
+                    }
+
+                    &.fa-instagram {
+                        color: #e1306c;
+                    }
+
+                    &.fa-linkedin-in {
+                        color: #0076b5;
+                    }
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+
+        }
+    }
+}

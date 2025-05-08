@@ -7,10 +7,15 @@
     h2 {
       font-size: $size1;
       margin-bottom: 3rem;
-      background: linear-gradient(to right, $color-blue, $color-grey);
+      background: linear-gradient(to bottom, $color-neon, $color-blue);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.15) rotate(3deg);
+      }
     }
   
     .projects-grid {
@@ -99,6 +104,7 @@
         text-decoration: none;
         transition: all 0.3s ease;
         width: max-content;
+        cursor: pointer;
   
         i {
           transition: transform 0.3s ease;
