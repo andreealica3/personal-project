@@ -1,6 +1,6 @@
 .portfolio-projects {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 900px;
     padding: 2rem 1.2rem;
     width: 90%;
   
@@ -21,7 +21,8 @@
     .projects-grid {
       display: grid;
       align-items: stretch;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      padding: 2rem;
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
     }
   
@@ -130,6 +131,19 @@
         z-index: 1;
       }
     }
+
+    @media screen and (max-width: 1024px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media screen and (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   }
+
   
   

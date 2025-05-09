@@ -714,7 +714,7 @@ body .link-style {
 
 .portfolio-projects {
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 900px;
   padding: 2rem 1.2rem;
   width: 90%;
 }
@@ -744,8 +744,9 @@ body .link-style {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  -ms-grid-columns: (minmax(260px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  padding: 2rem;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -893,6 +894,20 @@ body .link-style {
 .portfolio-projects .project-card * {
   position: relative;
   z-index: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .portfolio-projects .projects-grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio-projects .projects-grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 .cv-main {
