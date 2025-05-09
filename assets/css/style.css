@@ -54,7 +54,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   line-height: 1;
-  background-image: url(../images/bg-image.jpg);
+  background-image: url(../images/bg2.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -86,8 +86,8 @@ body .link-style {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   border-radius: 16px;
   -webkit-box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.15), 0 12px 36px rgba(94, 90, 90, 0.3), 0 6px 18px rgba(89, 89, 89, 0.25);
           box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.15), 0 12px 36px rgba(94, 90, 90, 0.3), 0 6px 18px rgba(89, 89, 89, 0.25);
@@ -209,6 +209,32 @@ body .link-style {
   50% {
     -webkit-transform: scale(1.3);
             transform: scale(1.3);
+  }
+}
+
+@-webkit-keyframes fadeScale {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes fadeScale {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 

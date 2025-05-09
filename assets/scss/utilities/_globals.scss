@@ -2,7 +2,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: $size4;
   line-height: 1;
-  background-image: url(../images/bg-image.jpg);
+  background-image: url(../images/bg2.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -26,7 +26,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     border-radius: 16px;
     box-shadow:
       inset 0 0 2px rgba(255, 255, 255, 0.25),
