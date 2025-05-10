@@ -184,6 +184,32 @@ ol {
   }
 }
 
+@-webkit-keyframes fadeInMove {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeInMove {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 .navbar {
   margin: 0;
   width: 100%;
@@ -429,23 +455,7 @@ ol {
   opacity: 0.6;
 }
 
-body {
-  font-size: 1rem;
-  line-height: 1.4;
-  background-image: url(../images/bg2.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-}
-
-.link-style {
-  font-weight: 400;
-  text-decoration: none;
-}
-
-.universal-box {
+.general-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -463,14 +473,14 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  -webkit-backdrop-filter: blur(14px);
-          backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
   border-radius: 16px;
   -webkit-box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.15), 0 12px 36px rgba(94, 90, 90, 0.3), 0 6px 18px rgba(89, 89, 89, 0.25);
           box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.15), 0 12px 36px rgba(94, 90, 90, 0.3), 0 6px 18px rgba(89, 89, 89, 0.25);
 }
 
-.universal-box::after {
+.general-box::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -478,6 +488,22 @@ body {
   pointer-events: none;
   -webkit-box-shadow: 0 0 10px rgba(118, 118, 118, 0.6), 0 0 20px rgba(123, 128, 127, 0.5), 0 0 30px rgba(68, 80, 78, 0.4), 0 0 50px rgba(57, 63, 62, 0.3);
           box-shadow: 0 0 10px rgba(118, 118, 118, 0.6), 0 0 20px rgba(123, 128, 127, 0.5), 0 0 30px rgba(68, 80, 78, 0.4), 0 0 50px rgba(57, 63, 62, 0.3);
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.4;
+  background-image: url(../images/bg2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.link-style {
+  font-weight: 400;
+  text-decoration: none;
 }
 
 .container {
