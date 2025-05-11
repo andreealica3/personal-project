@@ -210,6 +210,48 @@ ol {
   }
 }
 
+@-webkit-keyframes navbarFade {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes navbarFade {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes navbarSlide {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes navbarSlide {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 .navbar {
   margin: 0;
   width: 100%;
@@ -455,7 +497,8 @@ ol {
   opacity: 0.6;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -479,20 +522,29 @@ main {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  padding: 1rem;
 }
 
 main .simulator {
   margin: 3rem auto;
-  padding: 2rem;
-  max-width: 100%;
-  max-width: 1150px;
-  min-width: 320px;
+  padding: 1rem;
+  width: clamp(320px, 90vw, 1200px);
   border-radius: 16px;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   overflow: auto;
   resize: horizontal;
   min-height: 500px;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background-color: rgba(249, 249, 249, 0.6);
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+main .simulator .simulator-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -503,29 +555,22 @@ main .simulator {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: clamp(6rem, 8vw, 8rem);
   position: relative;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  background-color: rgba(249, 249, 249, 0.6);
-  border: 2px dashed rgba(255, 255, 255, 0.3);
-  -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-main .simulator .simulator-content {
   width: 100%;
-  height: 100%;
-  overflow: auto;
 }
 
-main .simulator .device-icon {
+main .simulator .simulator-content .device-icon {
   position: absolute;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  top: 0.5rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: clamp(1.5rem, 2vw, 2rem);
   color: rgba(48, 48, 48, 0.676);
-  font-size: 1.5rem;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -533,17 +578,231 @@ main .simulator .device-icon {
           user-select: none;
 }
 
-@media (max-width: 768px) {
-  .simulator {
-    resize: none;
-    width: 80%;
-  }
+main .simulator .simulator-content .navbar-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: clamp(3rem, 4vw, 4rem);
+}
+
+main .simulator .simulator-content .navbar-group .hamburger-btn {
+  display: none;
+}
+
+main .simulator .simulator-content .navbar-group .primary-navbar,
+main .simulator .simulator-content .navbar-group .secondary-navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  max-width: 900px;
+}
+
+main .simulator .simulator-content .navbar-group .primary-navbar {
+  padding: clamp(1.5rem, 2vw, 3rem);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  width: clamp(320px, 70vw, 1000px);
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-animation: navbarSlide 0.6s ease-out forwards;
+          animation: navbarSlide 0.6s ease-out forwards;
+}
+
+main .simulator .simulator-content .navbar-group .primary-navbar .primary-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: clamp(0.5rem, 1vw, 1rem);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .simulator .simulator-content .navbar-group .primary-navbar .primary-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 600;
+  color: #222;
+}
+
+main .simulator .simulator-content .navbar-group .primary-navbar .primary-separator {
+  width: 1px;
+  height: clamp(30px, 5vw, 45px);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 198, 255, 0)), color-stop(#00c6ff), color-stop(#0072ff), to(rgba(0, 114, 255, 0)));
+  background: linear-gradient(to bottom, rgba(0, 198, 255, 0), #00c6ff, #0072ff, rgba(0, 114, 255, 0));
+  border-radius: 10px;
+  margin-right: 1rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+main .simulator .simulator-content .navbar-group .primary-navbar .primary-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: clamp(0.3rem, 1vw, 1rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+main .simulator .simulator-content .navbar-group .primary-navbar .primary-menu ul li a {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #333;
+  font-size: clamp(1rem, 1.2vw, 1rem);
+  padding: clamp(0.5rem, 1vw, 0.7rem);
+  border-radius: 4px;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+main .simulator .simulator-content .navbar-group .primary-navbar .primary-menu ul li a:hover {
+  background: linear-gradient(135deg, #00c8ff17 0%, #ff00cc16 100%);
+}
+
+main .simulator .simulator-content .navbar-group .primary-navbar:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+main .simulator .simulator-content .navbar-group .primary-navbar:hover .primary-separator {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 198, 255, 0)), color-stop(#00c6ff), color-stop(#ff00cc), to(rgba(255, 0, 204, 0)));
+  background: linear-gradient(to bottom, rgba(0, 198, 255, 0), #00c6ff, #ff00cc, rgba(255, 0, 204, 0));
+}
+
+main .simulator .simulator-content .navbar-group .secondary-navbar {
+  width: clamp(320px, 70vw, 1000px);
+  padding: clamp(1.2rem, 2vw, 2rem);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ff7a93, #6a7cff);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-animation: navbarSlide 0.6s ease-out forwards;
+          animation: navbarSlide 0.6s ease-out forwards;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+main .simulator .simulator-content .navbar-group .secondary-navbar:hover {
+  -webkit-filter: brightness(1.05) saturate(1.05);
+          filter: brightness(1.05) saturate(1.05);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+main .simulator .simulator-content .navbar-group .secondary-navbar .secondary-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: clamp(0.5rem, 1vw, 1rem);
+}
+
+main .simulator .simulator-content .navbar-group .secondary-navbar .secondary-header .secondary-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+main .simulator .simulator-content .navbar-group .secondary-navbar .secondary-header .hamburger-btn {
+  display: none;
+}
+
+main .simulator .simulator-content .navbar-group .secondary-navbar .secondary-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+main .simulator .simulator-content .navbar-group .secondary-navbar .secondary-menu ul li a {
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: clamp(0.5rem, 1vw, 0.6rem) clamp(0.8rem, 2vw, 1rem);
+  border-radius: 11px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+main .simulator .simulator-content .navbar-group .secondary-navbar .secondary-menu ul li a:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #222222a0;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 @media (max-width: 1024px) {
-  .simulator {
+  main .simulator {
     resize: none;
-    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  main .simulator {
+    resize: none;
   }
 }
 /*# sourceMappingURL=hamburger-menu.css.map */
