@@ -1,0 +1,198 @@
+@import '../assets/scss/utilities/variables';
+@import '../assets/scss/utilities/reset';
+@import '../assets/scss/utilities/animations';
+@import '../assets/scss/common/navbar';
+@import '../assets/scss/common/footer';
+@import '../assets/scss/utilities/general-box';
+
+$number-of-images: 18;
+
+body {
+  font-size: $size4;
+  line-height: 1.4;
+  background-image: url(../images/bg7.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.general-box {
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.gallery {
+  padding: 5rem 3rem;
+  width: 100%;
+  text-align: center;
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin: 0 auto;
+    max-width: 1000px;
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      opacity: 0;
+      animation: fadeInMove 0.8s ease-out forwards;
+      border: 2px solid transparent;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+        display: block;
+
+        .closing {
+          transform: scale(0.8);
+          opacity: 0;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+      }
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(146, 146, 146, 0.30);
+        opacity: 1;
+        transition: opacity 0.4s ease;
+        border-radius: 12px;
+        pointer-events: none;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+
+      &:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        border: 2px solid rgba(255, 255, 255, 0.6);
+
+        .overlay {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+
+  @for $i from 1 through $number-of-images {
+    .gallery-item:nth-child(#{$i}) {
+      animation-delay: #{($i - 1) * 0.1}s;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+
+  .lightbox-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 85vw;
+    max-height: 80vh;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 1;
+    object-fit: contain;
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background: none;
+    border: none;
+    outline: none;
+    z-index: 3;
+
+    &:hover {
+      transform: scale(1.2);
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  .chevron-left,
+  .chevron-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.8rem;
+    color: white;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    user-select: none;
+    z-index: 2;
+  }
+
+  .chevron-left {
+    left: -50px; 
+  }
+
+  .chevron-right {
+    right: -50px; 
+  }
+
+  .chevron-left:hover,
+  .chevron-right:hover {
+    transform: translateY(-50%) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .lightbox {
+    .chevron-left,
+    .chevron-right {
+      display: none;
+    }
+  }
+}
