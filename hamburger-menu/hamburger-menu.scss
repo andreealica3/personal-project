@@ -26,6 +26,7 @@ main {
 }
 
 .simulator {
+  min-width: 350px;
   margin: 3rem auto;
   padding: 1rem;
   width: clamp(320px, 90vw, 1200px);
@@ -48,6 +49,7 @@ main {
     gap: clamp(6rem, 8vw, 8rem);
     position: relative;
     width: 100%;
+    padding: 3rem;
 
     .device-icon {
       position: absolute;
@@ -391,6 +393,36 @@ main {
   }
 }
 
+.simulate-tablet {
+  .simulator-content {
+    .navbar-group {
+      .secondary-navbar {
+        .secondary-header {
+          .secondary-title {
+            h3 {
+              font-size: 1.5rem;
+            }
+          }
+        }
+
+        .secondary-menu {
+          ul {
+            li {
+              width: 90px;
+              text-align: center;
+
+              a {
+                width: 100%;
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 
 @media (max-width: 1024px) {
   .simulator {
@@ -461,7 +493,7 @@ main {
 
         .primary-title {
           h3 {
-            font-size: 1.6rem;
+            font-size: 1rem;
           }
         }
       }
@@ -523,7 +555,7 @@ main {
 
         .secondary-title {
           h3 {
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             color: #fff;
           }
 
@@ -533,7 +565,7 @@ main {
           display: block;
           background: none;
           border: none;
-          font-size: 2rem;
+          font-size: 1.2rem;
           color: #fff;
           cursor: pointer;
         }
@@ -590,6 +622,21 @@ main {
         max-height: 600px;
         opacity: 1;
       }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  main {
+    padding: 0;
+  }
+  .simulator {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    .simulator-content {
+      padding: 0;
     }
   }
 }

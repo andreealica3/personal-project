@@ -17,6 +17,11 @@ function updateDeviceIcon() {
   } else {
     simulator.classList.remove('simulate-mobile');
   }
+  if (width <= 900) {
+    simulator.classList.add('simulate-tablet');
+  } else {
+    simulator.classList.remove('simulate-tablet');
+  }
 }
 
 simulator.addEventListener('mousemove', updateDeviceIcon);
