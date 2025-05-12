@@ -11,6 +11,12 @@ function updateDeviceIcon() {
   } else {
     deviceIcon.className = 'fa-solid fa-mobile-screen-button';
   }
+
+  if (width <= 600) {
+    simulator.classList.add('simulate-mobile');
+  } else {
+    simulator.classList.remove('simulate-mobile');
+  }
 }
 
 simulator.addEventListener('mousemove', updateDeviceIcon);
@@ -60,5 +66,23 @@ resizeObserver.observe(simulator);
 
 
 adjustNavbar();
+
+const primaryHamburgerBtn = document.querySelector('.primary-navbar .hamburger-btn');
+const primaryMenu = document.querySelector('.primary-menu');
+const secondaryHamburgerBtn = document.querySelector('.secondary-navbar .hamburger-btn');
+const secondaryMenu = document.querySelector('.secondary-menu');
+
+if (primaryHamburgerBtn && primaryMenu) {
+  primaryHamburgerBtn.addEventListener('click', () => {
+    primaryMenu.classList.toggle('active');
+  });
+}
+
+if (secondaryHamburgerBtn && secondaryMenu) {
+  secondaryHamburgerBtn.addEventListener('click', () => {
+    secondaryMenu.classList.toggle('active');
+  });
+}
+
 
 
