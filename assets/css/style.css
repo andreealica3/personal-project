@@ -1193,6 +1193,8 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-animation: fadeIn 1s ease-out;
+          animation: fadeIn 1s ease-out;
 }
 
 .portfolio-projects h2 {
@@ -1411,6 +1413,8 @@ main {
   max-width: 950px;
   margin: 0 auto;
   padding: clamp(0.5rem, 2vw, 1.5rem);
+  -webkit-animation: fadeIn 1s ease-out;
+          animation: fadeIn 1s ease-out;
 }
 
 .cv-main ul {
