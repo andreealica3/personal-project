@@ -1,3 +1,26 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f5f6f8, #efe9e3);
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
+
+.universal-box {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
 .portfolio-projects {
   margin: 0 auto;
   max-width: 900px;
@@ -11,7 +34,7 @@
   h2 {
     font-size: clamp(1.8rem, 5vw, 2rem); 
     margin-bottom: clamp(2rem, 5vw, 3rem);
-    background: linear-gradient(to bottom, #8A7158, #54674a);
+    background: linear-gradient(to bottom, #6d6c6c, #494949);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -60,7 +83,7 @@
     h3 {
       font-size: clamp(0.9rem, 3vw, 1rem); 
       font-weight: 600;
-      color: #8A7158;
+      color: #2d2d2d;
       margin-bottom: clamp(0.5rem, 2vw, 0.6rem);
 
       &::after {

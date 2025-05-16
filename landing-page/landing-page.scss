@@ -1,0 +1,309 @@
+@import '../assets/scss/utilities/variables';
+@import '../assets/scss/utilities/reset';
+@import '../assets/scss/utilities/animations';
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: linear-gradient(to bottom, #0a0014, #0a0a23, #121c31);
+    background-attachment: fixed;
+}
+
+body {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex: 1;
+
+    .main-content {    
+        padding: clamp(1rem, 2vw, 2rem);
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(1.5rem, 4vw, 3rem);
+        }
+        
+        .hero {
+            padding: clamp(3rem, 8vh, 5rem) clamp(1rem, 5vw, 3rem);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: clamp(1.5rem, 4vw, 3rem);
+            flex-wrap: wrap;
+            min-height: 100vh;
+            position: relative; 
+
+            .music-notes {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              pointer-events: none;
+              z-index: 1;
+          
+              .note {
+                position: absolute;
+                font-size: clamp(1.6rem, 2vw, 2rem);
+                color: rgba(255, 255, 255, 0.08);
+                transition: transform 0.3s ease;
+                pointer-events: auto;
+          
+                &:hover {
+                  transform: rotate(-15deg) scale(1.3);
+                  color: rgba(255, 255, 255, 0.15);
+                }
+              }
+
+         
+              .note1 {
+                top: 45%;
+                right: 10%;
+                animation-delay: 1.5s;
+                transition: transform 0.3s ease, color 0.3s ease;
+                color: #1db95496;
+
+                &:hover {
+                  color: lighten(#1db954, 10%);
+                  transform: rotate(-15deg) scale(1.4);
+                }
+              }
+          
+              .note2 {
+                bottom: 15%;
+                left: 20%;
+                animation-delay: 2s;
+                transition: transform 0.3s ease, color 0.3s ease;
+                color: #b74dbd96;
+
+                &:hover {
+                  color: lighten(#b84dbd, 10%);
+                  transform: rotate(-15deg) scale(1.4);
+                }
+              }
+          
+              .note3 {
+                bottom: 25%;
+                right: 18%;
+                animation-delay: 3s;
+                color: #1d8ab998;
+                transition: transform 0.3s ease, color 0.3s ease;
+
+                &:hover {
+                  color: lighten(#1d8ab9, 10%);
+                  transform: rotate(-15deg) scale(1.4);
+                }
+              }
+            }
+        
+            .hero-subtitle {
+                width: 100%; 
+                text-align: center;
+                font-family: 'Quicksand', sans-serif;
+                font-weight: 600;
+                font-size: clamp(0.7rem, 2.2vw, 1.4rem);
+                margin-bottom: clamp(1.5rem, 4vh, 3rem);
+                display: block;
+                background: linear-gradient(90deg, #fe58e5, #8a97fa);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text; 
+        
+        
+                i {
+                    margin-right: 0.5rem;
+                }
+            }
+        
+            .hero-text {
+                text-align: center;
+        
+                h1 {
+                    font-size: clamp(1.2rem, 5vw, 3rem);
+                    margin-bottom: clamp(1.3rem, 3vh, 2rem);
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 800;
+                    letter-spacing: 0.5px;
+                    color: #a3a6ff;;
+                }
+        
+                p {
+                    font-size: clamp(1rem, 2.2vw, 1.25rem);
+                    margin-bottom: clamp(1rem, 2vh, 1.5rem);
+                }
+        
+                button {
+                    font-size: clamp(1rem, 2vw, 1.2rem);
+                    padding: clamp(0.6rem, 1.5vw, 1rem) clamp(1.2rem, 3vw, 2rem);
+                    border-radius: 50px;
+                    border: none;
+                    background: #a76df2;
+                    color: white;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+        
+                    &:hover {
+                        background: #c08efc;
+                        transform: translateY(-2px);
+                    }
+                }
+            }
+        
+        
+            .hero-image {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        
+                img {
+                    max-width: clamp(250px, 30vw, 400px);
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        
+            .glow-text {
+                position: relative;
+                display: inline-block;
+                font-weight: 600;
+                font-size: clamp(1rem, 2.2vw, 1.4rem);
+                background: linear-gradient(90deg, #e073ff, #a6b0ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-shadow: 0 0 4px rgba(232, 115, 255, 0.6),
+                             0 0 5px rgba(166, 176, 255, 0.4);
+              }
+        }
+        
+        .why-cool {
+            padding: clamp(2rem, 8vh, 4rem) 0;
+            text-align: center;
+            min-height: 100vh;
+          
+            h2 {
+              font-size: clamp(1.8rem, 4vw, 2.5rem);
+              font-family: 'Montserrat', sans-serif;
+              margin-bottom: clamp(2rem, 6vh, 3rem);
+              background: linear-gradient(90deg, #e073ff, #a6b0ff);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          
+            .features {
+              display: flex;
+              flex-wrap: wrap;
+              gap: clamp(1rem, 4vw, 2.5rem);
+              justify-content: center;
+          
+              .feature-card {
+                background-color: rgba(255, 255, 255, 0.05);
+                padding: clamp(1.5rem, 4vw, 2rem);
+                border-radius: 20px;
+                width: clamp(240px, 30vw, 300px);
+                backdrop-filter: blur(8px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease;
+          
+                &:hover {
+                  transform: translateY(-6px);
+                }
+          
+                i {
+                  font-size: clamp(2rem, 5vw, 3rem);
+                  color: #b88eff;
+                  margin-bottom: 1rem;
+                }
+          
+                h3 {
+                  font-size: clamp(1.2rem, 3vw, 1.5rem);
+                  margin-bottom: 0.8rem;
+                }
+          
+                p {
+                  font-size: clamp(0.9rem, 2vw, 1rem);
+                  color: #ccc;
+                }
+              }
+            }
+        }   
+
+        .section-separator {
+            width: 80%;
+            height: 4px;
+            margin: clamp(2rem, 5vh, 4rem) auto;
+            background: linear-gradient(90deg, #b88eff, #e073ff, #a6b0ff);
+            box-shadow: 0 0 6px rgba(186, 134, 255, 0.5);
+            border-radius: 10px;
+            animation: pulseGlow 4s ease-in-out infinite alternate;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+          }
+    }
+
+    
+  }
+
+  .footer {
+    width: 100%;
+    padding: clamp(0.6rem, 5vh, 1.2rem) 0;
+    text-align: center;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    color: #e2e2e2;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.037);
+    background: rgba(255, 255, 255, 0.053);
+    backdrop-filter: blur(6px);
+  
+    a {
+      margin: 0 1rem;
+      color: #f3f3f3;
+      font-weight: 500;
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: #e6b5ff;
+      }
+    }
+  
+    p {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #a1a1a1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero .music-notes {
+      display: none;
+    }
+    
+    .section-separator {
+      display: none;
+    }
+  }
+  
+
+
+
+  
+  
+
+

@@ -1,5 +1,6 @@
 .footer {
   text-align: center;
+  margin-top: clamp(2rem, 5vw, 3rem);
   padding: clamp(1rem, 2vw, 1.5rem) clamp(0.5rem, 2vw, 1rem);
   color: rgba(50, 50, 50, 0.5);
   backdrop-filter: blur(8px);
