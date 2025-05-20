@@ -74,36 +74,6 @@ ol {
   }
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
 @-webkit-keyframes fadeSlideIn {
   to {
     opacity: 1;
@@ -117,44 +87,6 @@ ol {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes iconFadeIn {
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes iconFadeIn {
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes bounce {
-  0%, 100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
   }
 }
 
@@ -210,22 +142,6 @@ ol {
   }
 }
 
-@-webkit-keyframes navbarFade {
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes navbarFade {
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
 @-webkit-keyframes navbarSlide {
   from {
     opacity: 0;
@@ -272,6 +188,41 @@ ol {
             transform: translateY(10px);
   }
   to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes pulseGlow {
+  0% {
+    -webkit-box-shadow: 0 0 6px rgba(186, 134, 255, 0.3);
+            box-shadow: 0 0 6px rgba(186, 134, 255, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 12px rgba(186, 134, 255, 0.7);
+            box-shadow: 0 0 12px rgba(186, 134, 255, 0.7);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    -webkit-box-shadow: 0 0 6px rgba(186, 134, 255, 0.3);
+            box-shadow: 0 0 6px rgba(186, 134, 255, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 12px rgba(186, 134, 255, 0.7);
+            box-shadow: 0 0 12px rgba(186, 134, 255, 0.7);
+  }
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  100% {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
