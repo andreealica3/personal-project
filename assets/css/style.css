@@ -12,6 +12,7 @@ body {
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overscroll-behavior: none;
 }
 
 body {
@@ -426,6 +427,7 @@ body {
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overscroll-behavior: none;
 }
 
 body {
@@ -891,6 +893,7 @@ body {
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overscroll-behavior: none;
 }
 
 body {
@@ -1227,6 +1230,7 @@ body {
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overscroll-behavior: none;
 }
 
 body {
