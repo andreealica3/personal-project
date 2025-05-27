@@ -53,6 +53,12 @@ const projects = [
     icon: "fa-rocket",
     link: "movie-verification/index.html"
   },
+    {
+    title: "BMI Calculator",
+    description: "Calculates your Body Mass Index based on weight and height.",
+    icon: "fa-weight-scale",
+    link: "bmi-calculator/index.html"
+  },
   {
     title: "Newsletter Sign-Up",
     description: "A creative newsletter form with input validation and style.",
@@ -118,12 +124,6 @@ const projects = [
     description: "Persistent to-do list saved in browser's localStorage.",
     icon: "fa-list-check",
     link: "projects/todo-list/index.html"
-  },
-  {
-    title: "BMI Calculator",
-    description: "Calculates your Body Mass Index based on weight and height.",
-    icon: "fa-weight-scale",
-    link: "projects/bmi-calculator/index.html"
   },
   {
     title: "Password Generator",
