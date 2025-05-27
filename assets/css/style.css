@@ -502,9 +502,7 @@ main {
   flex-direction: row;
   max-height: 100vh;
   animation: fadeIn 1s ease-out;
-  border-radius: 24px;
   background: #f5f6f8;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 .homepage-hero .hero-text {
   position: relative;
@@ -517,10 +515,6 @@ main {
   gap: clamp(1.2rem, 1.5vw, 2rem);
   padding: clamp(0.7rem, 2.5vw, 1.5rem);
   background: linear-gradient(180deg, rgba(245, 246, 248, 0.7568627451) 0%, rgba(239, 233, 227, 0.7921568627) 100%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2), 0 25px 65px rgba(0, 0, 0, 0.18);
-  border-radius: 24px;
 }
 .homepage-hero .hero-text .header {
   position: relative;
@@ -722,8 +716,6 @@ main {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-top-right-radius: 24px;
-  border-bottom-right-radius: 24px;
 }
 @media (max-width: 650px) {
   .homepage-hero .homepage-hero {
