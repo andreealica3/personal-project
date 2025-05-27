@@ -28,16 +28,16 @@
       transition: all 0.3s ease;
 
       i.ph {
-        font-size: $size4;
+        font-size: 1rem;
         transition: color 0.3s ease;
-        color: #8A7158;
+        color: #5f5b59;
       }
 
       &:hover {
-        color: #58493b;
+        color: #3e3a35;
 
         i.ph {
-          color: #58493b;
+          color: #494541;
         }
       }
     }

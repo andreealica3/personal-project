@@ -1,54 +1,3 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-  font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
-}
-
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeSpeed;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-  background: none;
-  border: none;
-  outline: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
 .navbar {
   margin: 0;
   width: 100%;
@@ -232,84 +181,107 @@ ol {
   }
 }
 
-html, body {
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
   height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #eef2f3, #cfd9df);
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-image: url(../images/bg-cv.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
 }
 
 main {
-  display: flex;
   flex: 1;
+  display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: clamp(0.2rem, 2vw, 1rem);
+  align-items: center;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 2rem);
 }
-
-.cv-slider-wrapper {
+main .card {
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: clamp(1rem, 3vw, 1.5rem);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: clamp(2rem, 5vw, 3rem);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+main .card h2 {
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  color: #2c2c2c;
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 600;
+}
+main .card input[type=number] {
+  width: 100%;
+  padding: clamp(0.6rem, 2.5vw, 0.9rem);
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  border: 1px solid #ccc;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  transition: border 0.3s ease;
+}
+main .card input[type=number]:focus {
+  border-color: #6b9eff;
+  box-shadow: 0 0 0 2px rgba(107, 158, 255, 0.3);
+  outline: none;
+}
+main .card label {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: clamp(0.5rem, 2vw, 2rem);
-  width: clamp(320px, 85vw, 800px);
-  height: clamp(90px, 85vw, 400px);
-  margin: 0 auto;
-  padding: clamp(0.5rem, 3vw, 1rem);
-  border-radius: clamp(0.8rem, 2vw, 1.5rem);
-  background-color: rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
-  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.3), inset 0 0 8px rgba(255, 255, 255, 0.15), 0 8px 24px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.08);
+  gap: 0.5rem;
+  font-size: clamp(0.95rem, 2.5vw, 1rem);
+  color: #444;
+  margin: 0.75rem 0;
+  text-align: left;
 }
-.cv-slider-wrapper .chevron-left,
-.cv-slider-wrapper .chevron-right {
-  font-size: clamp(2rem, 4vw, 3rem);
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 50%;
-  padding: clamp(0.5rem, 1vw, 1rem);
+main .card label input[type=checkbox] {
+  transform: scale(1.2);
+  accent-color: #0077cc;
+}
+main .card button {
+  margin-top: 1.2rem;
+  background-color: #0077cc;
+  color: white;
+  padding: clamp(0.7rem, 2.5vw, 0.9rem) clamp(1.5rem, 4vw, 2rem);
+  border: none;
+  border-radius: 0.75rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.cv-slider-wrapper .chevron-left:hover,
-.cv-slider-wrapper .chevron-right:hover {
-  background-color: rgba(200, 200, 200, 0.85);
+main .card button:hover {
+  background-color: #005fa3;
 }
-.cv-slider-wrapper .cv-slider {
-  flex: 1;
-  overflow: hidden;
-  position: relative;
-  min-height: clamp(20rem, 50vw, 40rem);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+main .card .message {
+  margin-top: 1.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
 }
-.cv-slider-wrapper .cv-slider .slide {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+main .card .message.error {
+  color: #a76058;
 }
-.cv-slider-wrapper .cv-slider .slide.active {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  opacity: 1;
-  position: relative;
+main .card .message.success {
+  color: #5a8b6e;
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 2rem 1rem;
+  }
+  main .card {
+    padding: 1.5rem;
+  }
 }
