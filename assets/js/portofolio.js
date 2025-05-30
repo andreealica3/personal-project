@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const aboutButton = document.getElementById('aboutButton');
   const aboutContent = document.getElementById('aboutContent');
+  let swipeLocked = false;
 
   if (aboutButton && aboutContent) {
     aboutButton.addEventListener('click', () => {
@@ -169,10 +170,10 @@ const projects = [
   }
 ];
 
-
   const grid = document.getElementById("projects-container");
   const paginationContainer = document.getElementById("pagination");
   const cardsPerPage = 6;
+  let currentPage = 1;
 
   function createCard(project) {
     const card = document.createElement("div");
@@ -191,8 +192,8 @@ const projects = [
   }
 
   function renderPage(pageNumber) {
+    currentPage = pageNumber;
     grid.innerHTML = "";
-    document.querySelectorAll(".project-card.placeholder").forEach(p => p.remove());
 
     const start = (pageNumber - 1) * cardsPerPage;
     const end = start + cardsPerPage;
@@ -203,13 +204,13 @@ const projects = [
       grid.appendChild(card);
     });
 
+    updatePaginationButton(pageNumber);
+  }
 
-    const missing = cardsPerPage - pageProjects.length;
-    for (let i = 0; i < missing; i++) {
-      const placeholder = document.createElement("div");
-      placeholder.className = "project-card placeholder";
-      grid.appendChild(placeholder);
-    }
+  function updatePaginationButton(page) {
+    document.querySelectorAll(".page-btn").forEach(b => b.classList.remove("active"));
+    const activeBtn = paginationContainer.querySelector(`.page-btn[data-page="${page}"]`);
+    if (activeBtn) activeBtn.classList.add("active");
   }
 
   function setupPagination() {
@@ -223,16 +224,54 @@ const projects = [
 
       button.addEventListener("click", () => {
         renderPage(i);
-        document.querySelectorAll(".page-btn").forEach(b => b.classList.remove("active"));
-        button.classList.add("active");
       });
 
       paginationContainer.appendChild(button);
     }
 
-    renderPage(1);
-    paginationContainer.querySelector(".page-btn").classList.add("active");
+    renderPage(1); 
+    updatePaginationButton(1);
   }
 
   setupPagination();
+
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+function handleSwipeGesture() {
+  const totalPages = Math.ceil(projects.length / cardsPerPage);
+  if (swipeLocked) return;
+
+  if (touchEndX < touchStartX - 50 && currentPage < totalPages) {
+    swipeLocked = true;
+    renderPage(currentPage + 1);
+    setTimeout(() => swipeLocked = false, 300); 
+  } else if (touchEndX > touchStartX + 50 && currentPage > 1) {
+    swipeLocked = true;
+    renderPage(currentPage - 1);
+    setTimeout(() => swipeLocked = false, 300);
+  }
+}
+
+
+  // ➕ Swipe doar pe mobil
+  function enableSwipe() {
+    if (window.innerWidth <= 768) {
+      grid.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+
+      grid.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipeGesture();
+      });
+    }
+  }
+
+  enableSwipe();
+
+  window.addEventListener("resize", () => {
+    enableSwipe();
+  });
 });

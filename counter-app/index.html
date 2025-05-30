@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portofoliu web al Andreei Lica - proiecte, CV și tranziție spre IT.">
+    <meta name="author" content="Andreea Lica">
+    <meta property="og:title" content="Andreea Lica – Front-End Developer">
+    <meta property="og:description" content="Portofoliu cu proiecte și experiență în QA și web development.">
+    <meta property="og:image" content="https://andreealica3.github.io/assets/img/preview.png">
+    <meta property="og:url" content="https://andreealica3.github.io/personal-project/">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/icons/phosphor/phosphor.css">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="../assets/css/counter.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <h1><span>andreea</span> lica</h1>
+    </header>
+        <main>
+            <section class="savings-container universal-box">
+                <div class="step step-1">
+                    <h2>Savings Counter</h2>
+                    <div class="input-group">
+                        <label for="currency">Currency</label>
+                        <div class="custom-select">
+                            <div class="selected">RON lei</div>
+                            <ul class="options hidden">
+                                <li data-value="EUR">EUR €</li>
+                                <li data-value="USD">USD $</li>
+                                <li data-value="GBP">GBP £</li>
+                                <li data-value="RON">RON lei</li>
+                                <li data-value="JPY">JPY ¥</li>
+                            </ul>
+                        </div>
+                        <input type="hidden" name="currency" id="currency" />
+                    </div>
+                    <div class="input-group">
+                        <label for="goal">Goal</label>
+                        <div class="number-wrapper">
+                            <button type="button" class="decrease">−</button>
+                            <input type="number" id="goal" min="0" value="0" />
+                            <button type="button" class="increase">+</button>
+                        </div>
+                    </div>
+                    <button class="next-btn gradient-btn">Next</button>
+                </div>
+                <div class="step step-2 hidden">
+                    <button class="start-over">Start Over</button>
+                    <h2>Savings Counter</h2>
+                    <p class="goal-info hidden"></p>
+                    <div class="progress-group">
+                        <span class="progress-label">0%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="amount-buttons">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="custom-amount" placeholder="Enter amount..." />
+                    </div>
+                    <div class="action-buttons">
+                        <button class="gradient-btn" id="add-btn">Add Money</button>
+                        <button class="bordered-btn" id="subtract-btn">Subtract Money</button>
+                    </div>
+                    <button class="done-btn">Done</button>
+                </div>
+            </section>
+        </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-links">
+                <a href="mailto:andreealica67@gmail.com" class="contact-link">
+                    <i class="ph ph-envelope"></i> Email: </a>
+                <a href="https://www.linkedin.com/in/andreea-lica-2840a6291/" target="_blank" class="contact-link">
+                    <i class="ph ph-linkedin-logo"></i> LinkedIn </a>
+                <a href="tel:+40762975951" class="contact-link">
+                    <i class="ph ph-phone"></i> +40 762 975 951 </a>
+            </div>
+            <p class="copyright">
+                <i class="ph ph-copyright"></i> 2025 Andreea Lica. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

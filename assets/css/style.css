@@ -11,6 +11,8 @@ body {
   height: 100%;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: contain;
 }
 
 body {
@@ -272,7 +274,6 @@ ol {
   text-align: center;
   margin-top: clamp(2rem, 5vw, 3rem);
   padding: clamp(1rem, 2vw, 1.5rem) clamp(0.5rem, 2vw, 1rem);
-  color: rgba(50, 50, 50, 0.5);
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
   background-color: rgba(255, 255, 255, 0.2);
@@ -424,6 +425,8 @@ body {
   height: 100%;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: contain;
 }
 
 body {
@@ -496,7 +499,7 @@ main {
   display: flex;
   width: 100%;
   flex-direction: row;
-  max-height: 100vh;
+  min-height: 100dvh;
   animation: fadeIn 1s ease-out;
   background: #f5f6f8;
 }
