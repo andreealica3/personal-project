@@ -60,6 +60,12 @@ const projects = [
     icon: "fa-weight-scale",
     link: "bmi-calculator/index.html"
   },
+    {
+    title: "Counter App",
+    description: "Simple counter with increment, decrement, and reset options.",
+    icon: "fa-plus-minus",
+    link: "counter-app/index.html"
+  },
   {
     title: "Newsletter Sign-Up",
     description: "A creative newsletter form with input validation and style.",
@@ -131,12 +137,6 @@ const projects = [
     description: "Generates strong passwords with custom rules and length.",
     icon: "fa-lock",
     link: "projects/password-generator/index.html"
-  },
-  {
-    title: "Counter App",
-    description: "Simple counter with increment, decrement, and reset options.",
-    icon: "fa-plus-minus",
-    link: "projects/counter-app/index.html"
   },
   {
     title: "Light/Dark Toggle",

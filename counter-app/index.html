@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Portofoliu web al Andreei Lica - proiecte, CV și tranziție spre IT.">
     <meta name="author" content="Andreea Lica">
     <meta property="og:title" content="Andreea Lica – Front-End Developer">
@@ -23,57 +23,64 @@
     <header class="navbar">
         <h1><span>andreea</span> lica</h1>
     </header>
-        <main>
-            <section class="savings-container universal-box">
-                <div class="step step-1">
-                    <h2>Savings Counter</h2>
-                    <div class="input-group">
-                        <label for="currency">Currency</label>
-                        <div class="custom-select">
-                            <div class="selected">RON lei</div>
-                            <ul class="options hidden">
-                                <li data-value="EUR">EUR €</li>
-                                <li data-value="USD">USD $</li>
-                                <li data-value="GBP">GBP £</li>
-                                <li data-value="RON">RON lei</li>
-                                <li data-value="JPY">JPY ¥</li>
-                            </ul>
-                        </div>
-                        <input type="hidden" name="currency" id="currency" />
+    <main>
+        <section class="savings-container universal-box">
+            <div class="step step-1">
+                <h2>Savings Counter</h2>
+                <div class="input-group">
+                    <label for="currency">Currency</label>
+                    <div class="custom-select">
+                        <div class="selected">RON lei</div>
+                        <ul class="options">
+                            <li data-value="EUR">EUR €</li>
+                            <li data-value="USD">USD $</li>
+                            <li data-value="GBP">GBP £</li>
+                            <li data-value="RON">RON lei</li>
+                            <li data-value="JPY">JPY ¥</li>
+                        </ul>
                     </div>
-                    <div class="input-group">
-                        <label for="goal">Goal</label>
-                        <div class="number-wrapper">
-                            <button type="button" class="decrease">−</button>
-                            <input type="number" id="goal" min="0" value="0" />
-                            <button type="button" class="increase">+</button>
-                        </div>
-                    </div>
-                    <button class="next-btn gradient-btn">Next</button>
+                    <input type="hidden" name="currency" id="currency" value="RON" />
                 </div>
-                <div class="step step-2 hidden">
-                    <button class="start-over">Start Over</button>
-                    <h2>Savings Counter</h2>
-                    <p class="goal-info hidden"></p>
-                    <div class="progress-group">
-                        <span class="progress-label">0%</span>
-                        <div class="progress-bar">
-                            <div class="progress-fill"></div>
-                        </div>
+                <div class="input-group">
+                    <label for="goal">Goal</label>
+                    <div class="number-wrapper" id="goal-wrapper">
+                        <button type="button" class="decrease">−</button>
+                        <input type="number" id="goal" min="0" value="0" />
+                        <button type="button" class="increase">+</button>
                     </div>
-                    <div class="amount-buttons">
-                    </div>
-                    <div class="input-group">
-                        <input type="number" id="custom-amount" placeholder="Enter amount..." />
-                    </div>
-                    <div class="action-buttons">
-                        <button class="gradient-btn" id="add-btn">Add Money</button>
-                        <button class="bordered-btn" id="subtract-btn">Subtract Money</button>
-                    </div>
-                    <button class="done-btn">Done</button>
                 </div>
-            </section>
-        </main>
+                <button class="next-btn gradient-btn">Next</button>
+            </div>
+            <div class="step step-2 hidden">
+                <button class="start-over">Start Over</button>
+                <h2>Savings Counter</h2>
+                <p class="goal-info hidden"></p>
+                <div class="progress-group">
+                    <span class="progress-label">0%</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="amount-buttons">
+                </div>
+                <div class="input-group">
+                    <label for="amount">Amount</label>
+                    <div class="number-wrapper" id="amount-wrapper">
+                        <button type="button" class="decrease-amount">−</button>
+                        <input type="number" id="amount" min="0" value="0" />
+                        <button type="button" class="increase-amount">+</button>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="gradient-btn" id="add-btn">Add Money</button>
+                    <button class="bordered-btn" id="subtract-btn">Subtract Money</button>
+                </div>
+                <div class="button-wrapper">
+                    <button class="bordered-btn" id="undo">Undo</button>
+                    <button class="bordered-btn" id="done">Done</button>
+                </div>
+        </section>
+    </main>
     <footer class="footer">
         <div class="footer-content">
             <div class="contact-links">

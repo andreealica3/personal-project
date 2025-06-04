@@ -265,6 +265,23 @@
     transform: translateY(0);
   }
 }
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 *,
 *::before,
 *::after {
@@ -289,6 +306,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 img,
@@ -309,6 +327,7 @@ select {
   background: none;
   border: none;
   outline: none;
+  font-size: 16px;
 }
 
 a {

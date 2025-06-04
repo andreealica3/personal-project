@@ -265,6 +265,23 @@
     transform: translateY(0);
   }
 }
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 *,
 *::before,
 *::after {
@@ -289,6 +306,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 img,
@@ -309,6 +327,7 @@ select {
   background: none;
   border: none;
   outline: none;
+  font-size: 16px;
 }
 
 a {
@@ -331,18 +350,15 @@ ol {
   box-sizing: border-box;
 }
 
-html,
 body {
-  height: 100%;
-}
-
-body {
+  min-height: 100svh;
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(to bottom right, #0d0d10, #1e1e24);
+  background: linear-gradient(to bottom right, #575757, #343434);
   color: #fff;
   display: flex;
   flex-direction: column;
+  min-height: 100dvh;
 }
 
 main {
@@ -358,6 +374,7 @@ main {
   padding: clamp(1rem, 4vw, 1.5rem);
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  flex: 1;
 }
 .navbar h1 {
   font-size: clamp(1.4rem, 4vw, 2rem);
@@ -369,8 +386,9 @@ main {
 
 .footer {
   background-color: #1a1a1f;
+  flex: 1;
   color: rgba(255, 255, 255, 0.6);
-  box-shadow: inset 0 0 0.5px rgba(0, 0, 0, 0.4), inset 0 0 6px rgba(57, 57, 57, 0.2), 0 6px 20px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: none;
 }
 .footer .contact-links .contact-link {
   color: rgba(255, 255, 255, 0.7);
@@ -399,7 +417,7 @@ main {
   max-width: 620px;
   width: 90dvw;
   padding: clamp(1.5rem, 5vw, 2rem);
-  background: #121216;
+  background-color: #1a1a1f;
   border-radius: clamp(1rem, 3vw, 1.5rem);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   color: #fff;
@@ -534,12 +552,60 @@ main {
   transform: translateY(-2px);
 }
 .savings-container .step-2 {
-  display: none;
+  display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 4vw, 2rem);
+  gap: clamp(0.8rem, 3vw, 1.5rem);
 }
 .savings-container .step-2.active {
   display: flex;
+}
+.savings-container .step-2 .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 2vw, 0.8rem);
+}
+.savings-container .step-2 .input-group label {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  color: #aaa;
+}
+.savings-container .step-2 .input-group .number-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: #1e1e24;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.savings-container .step-2 .input-group .number-wrapper input {
+  width: 100%;
+  padding: clamp(0.6rem, 2vw, 0.8rem);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  background: transparent;
+  border: none;
+  color: #fff;
+  text-align: center;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+.savings-container .step-2 .input-group .number-wrapper input::-webkit-inner-spin-button, .savings-container .step-2 .input-group .number-wrapper input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.savings-container .step-2 .input-group .number-wrapper input:focus {
+  outline: none;
+}
+.savings-container .step-2 .input-group .number-wrapper button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  padding: clamp(0.6rem, 2vw, 0.8rem);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.savings-container .step-2 .input-group .number-wrapper button:hover {
+  background-color: #2c2c32;
 }
 .savings-container .step-2 .start-over {
   font-size: clamp(0.8rem, 2vw, 0.9rem);
@@ -590,7 +656,7 @@ main {
 .savings-container .step-2 .amount-buttons button,
 .savings-container .step-2 .amount-buttons input[type=number] {
   padding: clamp(0.5rem, 2vw, 0.8rem);
-  font-size: clamp(0.85rem, 2vw, 1rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
   background: #1e1e24;
   color: #fff;
   border-radius: 8px;
@@ -633,7 +699,12 @@ main {
 .savings-container .step-2 .action-buttons button#subtract-btn:active {
   box-shadow: 0 0 10px rgba(255, 94, 94, 0.6);
 }
-.savings-container .step-2 .done-btn {
+.savings-container .step-2 .button-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(0.5rem, 2vw, 1rem);
+}
+.savings-container .step-2 .button-wrapper .bordered-btn {
   width: 100%;
   text-align: center;
   padding: clamp(0.8rem, 2vw, 1rem);
@@ -644,6 +715,29 @@ main {
   margin-top: clamp(1rem, 4vw, 2rem);
   cursor: pointer;
 }
-.savings-container .step-2 .done-btn:hover {
+.savings-container input[type=number],
+.savings-container input[type=text] {
+  font-size: 16px !important;
+  scroll-margin-bottom: 40dvh;
+}
+
+#done:hover:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+#undo {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+#undo:hover {
+  border-color: #ff5e5e;
+}
+
+.error {
+  border: 1px solid rgba(255, 80, 80, 0.6);
+  animation: shake 0.3s ease;
+  box-shadow: 0 0 0 2px rgba(255, 80, 80, 0.3);
+}
+
+.hidden {
+  display: none !important;
 }
