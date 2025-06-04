@@ -21,6 +21,12 @@ body {
     text-decoration: none;
 }
 
+main {
+  flex: 1;
+  margin-top: clamp(1rem, 3vw, 1.6rem);
+  margin-bottom: clamp(1rem, 3vw, 1.6rem);
+}
+
 .container {
     max-width: clamp(50rem, 70vw, 56.25rem); 
     margin: 0 auto;
@@ -31,7 +37,6 @@ body {
     flex-wrap: wrap;
     .card-row {
         display: flex;
-        flex-wrap: wrap;
         flex-direction: row;
         margin: 0 auto;
         gap: clamp(1.4rem, 2vw, 2.2rem);

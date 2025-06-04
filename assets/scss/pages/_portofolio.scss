@@ -13,12 +13,18 @@ body {
   background-attachment: fixed; 
 }
 
+main {
+  flex: 1;
+  margin-top: clamp(1rem, 3vw, 1.6rem);
+  margin-bottom: clamp(1rem, 3vw, 1.6rem);
+}
+
 .universal-box {
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(12px);
   border-radius: 24px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  padding: 2rem;
+  padding: 1.5rem;
   transition: all 0.3s ease;
 }
 
@@ -26,7 +32,7 @@ body {
   flex: 1;
   margin: 0 auto;
   max-width: 900px;
-  padding: clamp(1rem, 3vw, 1.5rem) clamp(0.5rem, 3vw, 1rem);
+  padding: clamp(1rem, 3vw, 1.2rem) clamp(0.5rem, 3vw, 0.8rem);
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -35,8 +41,8 @@ body {
   
 
   h2 {
-    font-size: clamp(1.8rem, 5vw, 2rem); 
-    margin-bottom: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.6rem, 5vw, 1.8rem); 
+    margin-bottom: clamp(1rem, 5vw, 1.3rem);
     background: linear-gradient(to bottom, #6d6c6c, #494949);
     background-clip: text;
     -webkit-background-clip: text;
@@ -51,12 +57,13 @@ body {
   .projects-grid {
     display: grid;
     align-items: stretch;
-    padding: clamp(1rem, 2.5vw, 1.3rem);
+    padding: clamp(0.8rem, 2.5vw, 1.3rem);
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(1rem, 4vw, 2rem);
+    gap: clamp(1rem, 4vw, 1.7rem);
   }
 
   .project-card {
+    min-height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -87,7 +94,7 @@ body {
       font-size: clamp(0.9rem, 3vw, 1rem); 
       font-weight: 600;
       color: #2d2d2d;
-      margin-bottom: clamp(0.5rem, 2vw, 0.6rem);
+      margin-bottom: clamp(0.3rem, 2vw, 0.4rem);
 
       &::after {
         content: '';
@@ -102,15 +109,14 @@ body {
     p {
       font-size: clamp(0.85rem, 2vw, 0.95rem); 
       color: $color-grey;
-      margin-bottom: clamp(1rem, 4vw, 1.5rem);
     }
 
     .project-icon {
-      font-size: clamp(1.4rem, 4vw, 1.6rem);
-      margin-bottom: 1rem;
+      font-size: clamp(1.2rem, 4vw, 1.4rem);
+      margin-bottom: 0.7rem;
       transition: transform 0.3s ease;
       color: #54674a;
-      padding: 0.5rem;
+      padding: 0.3rem;
 
       &:hover {
         transform: scale(1.15) rotate(3deg);
@@ -133,7 +139,6 @@ body {
       border-radius: 30px;
       text-decoration: none;
       transition: all 0.3s ease;
-      width: max-content;
       cursor: pointer;
 
       i {
@@ -178,7 +183,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 0.8rem;
-  margin-top: 2.5rem;
+  margin-top: 1rem;
 
   .page-btn {
   width: 12px;
@@ -201,7 +206,6 @@ body {
 
 &.active {
   background: #4e6841;
-  transform: scale(1.3);
 }
 }
 }

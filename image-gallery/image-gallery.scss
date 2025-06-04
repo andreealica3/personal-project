@@ -18,6 +18,12 @@ body {
   min-height: 100vh;
 }
 
+main {
+  flex: 1;
+  margin-top: clamp(1rem, 3vw, 1.6rem);
+  margin-bottom: clamp(1rem, 3vw, 1.6rem);
+}
+
 .general-box {
   max-width: 900px;
   width: 90%;

@@ -70,103 +70,103 @@ const projects = [
     title: "Newsletter Sign-Up",
     description: "A creative newsletter form with input validation and style.",
     icon: "fa-newspaper",
-    link: "projects/newsletter-signup/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "404 Not Found Page",
     description: "A fun and custom-designed 404 error page.",
     icon: "fa-ban",
-    link: "projects/404-page/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "Pricing Table",
     description: "A modern and responsive pricing plan comparison section.",
     icon: "fa-sack-dollar",
-    link: "projects/pricing-table/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "Simple Contact Form",
     description: "A clean HTML/CSS contact form layout with input fields.",
     icon: "fa-pen-to-square",
-    link: "projects/contact-form/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "Login Page UI",
     description: "A stylish login form interface with floating labels.",
     icon: "fa-circle-user",
-    link: "projects/login-page/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "Registration Page UI",
     description: "A responsive sign-up page with clean styling and fields.",
     icon: "fa-user-plus",
-    link: "projects/registration-page/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "Testimonial Section",
     description: "A testimonial layout with user cards and star ratings.",
     icon: "fa-thumbs-up",
-    link: "projects/testimonials/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "Animated Loading Page",
     description: "A simple pre-loader with CSS animations for page loading.",
     icon: "fa-spinner",
-    link: "projects/loader-page/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "FAQ Accordion",
     description: "A collapsible FAQ section with smooth transitions.",
     icon: "fa-circle-question",
-    link: "projects/faq-accordion/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "Quiz App",
     description: "Interactive quiz with score tracking and multiple questions.",
     icon: "fa-question",
-    link: "projects/quiz-app/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "To-Do List",
     description: "Persistent to-do list saved in browser's localStorage.",
     icon: "fa-list-check",
-    link: "projects/todo-list/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "Password Generator",
     description: "Generates strong passwords with custom rules and length.",
     icon: "fa-lock",
-    link: "projects/password-generator/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "Light/Dark Toggle",
     description: "Theme toggle with persistent preference saved in localStorage.",
     icon: "fa-circle-half-stroke",
-    link: "projects/dark-mode-toggle/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "Clock & Countdown",
     description: "Live digital clock and customizable countdown timer.",
     icon: "fa-clock",
-    link: "projects/clock-countdown/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "Guess the Number",
     description: "Classic game where you guess a random number with hints.",
     icon: "fa-gamepad",
-    link: "projects/guess-number/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "Rock Paper Scissors",
     description: "Play against the computer with score tracking.",
     icon: "fa-hand-back-fist",
-    link: "projects/rock-paper-scissors/index.html"
+    link: "counter-app/index.html"
   },
   {
     title: "Clicker Game",
     description: "Tap as fast as you can! A game for speed and reaction.",
     icon: "fa-mouse",
-    link: "projects/clicker-game/index.html"
+    link: "counter-app/index.html"
   }
 ];
 
