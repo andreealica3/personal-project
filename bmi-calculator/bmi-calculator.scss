@@ -1,0 +1,162 @@
+@import '../assets/scss/common/navbar';
+@import '../assets/scss/common/footer';
+@import '../assets/scss/utilities/animations';
+@import '../assets/scss/utilities/reset';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f6f3;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bmi-calculator {
+  max-width: clamp(400px, 90%, 600px);
+  width: 80vw;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 1.8rem);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeInBmi 0.6s ease;
+  justify-content: center;
+
+  h2 {
+    font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: #2e2e2e;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 1.2rem);
+
+    input {
+      padding: clamp(0.9rem, 1.5vw, 1rem) clamp(1.2rem, 2vw, 1.6rem);
+      font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+      border: 1px solid rgba(100, 100, 100, 0.3);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.6);
+      color: #2d2d2d;
+      backdrop-filter: blur(6px);
+      transition: border-color 0.3s ease;
+
+      &::placeholder {
+        color: #777;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: #4e6841;
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 0 0 4px rgba(78, 104, 65, 0.15);
+      }
+    }
+
+    button {
+      margin-top: 0.5rem;
+      padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(0.9rem, 1.8vw, 1rem);
+      background-color: #545b50;
+      color: white;
+      border: none;
+      border-radius: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      transform: scale(1);
+
+      &:hover {
+        background-color: #405439c5;
+      }
+
+      &:active {
+        transform: scale(0.96);
+      }
+    }
+  }
+
+  #bmi-result {
+    margin-top: clamp(1.2rem, 3vw, 1.6rem);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-weight: 500;
+    color: #2b2b2b;
+    word-wrap: break-word;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &.underweight {
+      color: #a86729;
+    }
+
+    &.normal {
+      color: #4e6841;
+    }
+
+    &.overweight {
+      color: #ba7a28b5;
+    }
+
+    &.obese {
+      color: #882e2e;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 90vw;
+    padding: clamp(1rem, 4vw, 1.3rem);
+
+    h2 {
+      font-size: clamp(1.4rem, 5vw, 1.7rem);
+      margin-bottom: 1.6rem;
+    }
+
+    form {
+      gap: 1.2rem;
+
+      input,
+      button {
+        width: 100%;
+        font-size: clamp(0.8rem, 4vw, 1rem);
+        padding: 0.9rem 1.2rem;
+      }
+
+      button {
+        padding: 1rem 2rem;
+      }
+    }
+
+    #bmi-result {
+      font-size: clamp(0.8rem, 4vw, 1rem);
+      margin-top: 1.8rem;
+    }
+  }
+}
