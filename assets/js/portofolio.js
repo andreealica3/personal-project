@@ -23,173 +23,170 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-const projects = [
-  {
-    title: "Stylized Profile Card",
-    description: "A responsive card with image, name, and basic profile info.",
-    icon: "fa-address-card",
-    link: "profile-card/index.html"
-  },
-  {
-    title: "Image Gallery",
-    description: "A clean, responsive image grid with hover effects.",
-    icon: "fa-images",
-    link: "image-gallery/index.html"
-  },
-  {
-    title: "Responsive Navigation Bar",
-    description: "A mobile-friendly navigation menu with toggle animation.",
-    icon: "fa-bars",
-    link: "hamburger-menu/index.html"
-  },
-  {
-    title: "Landing Page",
-    description: "A modern landing page for showcasing a product or service.",
-    icon: "fa-rocket",
-    link: "landing-page/index.html"
-  },
-  {
-    title: "Movie Verfication Form",
-    description: "A modern verification form.",
-    icon: "fa-rocket",
-    link: "movie-verification/index.html"
-  },
+  const projects = [
     {
-    title: "BMI Calculator",
-    description: "Calculates your Body Mass Index based on weight and height.",
-    icon: "fa-weight-scale",
-    link: "bmi-calculator/index.html"
-  },
+      title: "Stylized Profile Card",
+      image: "assets/images/profile-card.png",
+      icon: "fa-address-card",
+      link: "profile-card/index.html"
+    },
     {
-    title: "Counter App",
-    description: "Simple counter with increment, decrement, and reset options.",
-    icon: "fa-plus-minus",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Newsletter Sign-Up",
-    description: "A creative newsletter form with input validation and style.",
-    icon: "fa-newspaper",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "404 Not Found Page",
-    description: "A fun and custom-designed 404 error page.",
-    icon: "fa-ban",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Pricing Table",
-    description: "A modern and responsive pricing plan comparison section.",
-    icon: "fa-sack-dollar",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Simple Contact Form",
-    description: "A clean HTML/CSS contact form layout with input fields.",
-    icon: "fa-pen-to-square",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Login Page UI",
-    description: "A stylish login form interface with floating labels.",
-    icon: "fa-circle-user",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Registration Page UI",
-    description: "A responsive sign-up page with clean styling and fields.",
-    icon: "fa-user-plus",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Testimonial Section",
-    description: "A testimonial layout with user cards and star ratings.",
-    icon: "fa-thumbs-up",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Animated Loading Page",
-    description: "A simple pre-loader with CSS animations for page loading.",
-    icon: "fa-spinner",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "FAQ Accordion",
-    description: "A collapsible FAQ section with smooth transitions.",
-    icon: "fa-circle-question",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Quiz App",
-    description: "Interactive quiz with score tracking and multiple questions.",
-    icon: "fa-question",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "To-Do List",
-    description: "Persistent to-do list saved in browser's localStorage.",
-    icon: "fa-list-check",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Password Generator",
-    description: "Generates strong passwords with custom rules and length.",
-    icon: "fa-lock",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Light/Dark Toggle",
-    description: "Theme toggle with persistent preference saved in localStorage.",
-    icon: "fa-circle-half-stroke",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Clock & Countdown",
-    description: "Live digital clock and customizable countdown timer.",
-    icon: "fa-clock",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Guess the Number",
-    description: "Classic game where you guess a random number with hints.",
-    icon: "fa-gamepad",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Rock Paper Scissors",
-    description: "Play against the computer with score tracking.",
-    icon: "fa-hand-back-fist",
-    link: "counter-app/index.html"
-  },
-  {
-    title: "Clicker Game",
-    description: "Tap as fast as you can! A game for speed and reaction.",
-    icon: "fa-mouse",
-    link: "counter-app/index.html"
-  }
-];
+      title: "Image Gallery",
+      image: "assets/images/gallery.png",
+      icon: "fa-images",
+      link: "image-gallery/index.html"
+    },
+    {
+      title: "Responsive NavBar",
+      image: "assets/images/navbar.png",
+      icon: "fa-bars",
+      link: "hamburger-menu/index.html"
+    },
+    {
+      title: "Landing Page",
+      image: "assets/images/landing.png",
+      icon: "fa-rocket",
+      link: "landing-page/index.html"
+    },
+    {
+      title: "Movie Verfication Form",
+      image: "assets/images/movie.png",
+      icon: "fa-rocket",
+      link: "movie-verification/index.html"
+    },
+    {
+      title: "BMI Calculator",
+      image: "assets/images/bmi.png",
+      icon: "fa-weight-scale",
+      link: "bmi-calculator/index.html"
+    },
+    {
+      title: "Counter App",
+      image: "assets/images/navbar.png",
+      icon: "fa-plus-minus",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Newsletter Sign-Up",
+      image: "assets/images/navbar.png",
+      icon: "fa-newspaper",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "404 Not Found Page",
+      image: "assets/images/navbar.png",
+      icon: "fa-ban",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Pricing Table",
+      image: "assets/images/navbar.png",
+      icon: "fa-sack-dollar",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Simple Contact Form",
+      image: "assets/images/navbar.png",
+      icon: "fa-pen-to-square",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Login Page UI",
+      image: "assets/images/navbar.png",
+      icon: "fa-circle-user",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Registration Page UI",
+      image: "assets/images/navbar.png",
+      icon: "fa-user-plus",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Testimonial Section",
+      image: "assets/images/navbar.png",
+      icon: "fa-thumbs-up",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Animated Loading Page",
+      image: "assets/images/navbar.png",
+      icon: "fa-spinner",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "FAQ Accordion",
+      image: "assets/images/navbar.png",
+      icon: "fa-circle-question",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Quiz App",
+      image: "assets/images/navbar.png",
+      icon: "fa-question",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "To-Do List",
+      image: "assets/images/navbar.png",
+      icon: "fa-list-check",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Password Generator",
+      image: "assets/images/navbar.png",
+      icon: "fa-lock",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Light/Dark Toggle",
+      image: "assets/images/navbar.png",
+      icon: "fa-circle-half-stroke",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Clock & Countdown",
+      image: "assets/images/navbar.png",
+      icon: "fa-clock",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Guess the Number",
+      image: "assets/images/navbar.png",
+      icon: "fa-gamepad",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Rock Paper Scissors",
+      image: "assets/images/navbar.png",
+      icon: "fa-hand-back-fist",
+      link: "counter-app/index.html"
+    },
+    {
+      title: "Clicker Game",
+      image: "assets/images/navbar.png",
+      icon: "fa-mouse",
+      link: "counter-app/index.html"
+    }
+  ];
 
   const grid = document.getElementById("projects-container");
   const paginationContainer = document.getElementById("pagination");
   const cardsPerPage = 6;
   let currentPage = 1;
 
-  function createCard(project) {
-    const card = document.createElement("div");
-    card.className = "project-card";
-    card.innerHTML = `
-      <div class="card-content">
-        <i class="fa-solid ${project.icon} project-icon"></i>
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-      </div>
-      <a href="${project.link}" class="project-link" target="_blank" rel="noopener noreferrer">
-        <span>Preview</span> <i class="fa-solid fa-circle-arrow-right"></i>
-      </a>
-    `;
-    return card;
-  }
+function createCard(project) {
+  const card = document.createElement("div");
+  card.className = "project-card";
+  card.innerHTML = `
+    <div class="card-content">
+      <i class="fa-solid ${project.icon} project-icon"></i>
+      <h3>${project.title}<span class="underline"></span></h3>
+      <img src="${project.image}" alt="${project.title}" class="project-preview" />
+    </div>
+  `;
+  return card;
+}
 
   function renderPage(pageNumber) {
     currentPage = pageNumber;
@@ -229,7 +226,7 @@ const projects = [
       paginationContainer.appendChild(button);
     }
 
-    renderPage(1); 
+    renderPage(1);
     updatePaginationButton(1);
   }
 
@@ -239,20 +236,20 @@ const projects = [
   let touchStartX = 0;
   let touchEndX = 0;
 
-function handleSwipeGesture() {
-  const totalPages = Math.ceil(projects.length / cardsPerPage);
-  if (swipeLocked) return;
+  function handleSwipeGesture() {
+    const totalPages = Math.ceil(projects.length / cardsPerPage);
+    if (swipeLocked) return;
 
-  if (touchEndX < touchStartX - 50 && currentPage < totalPages) {
-    swipeLocked = true;
-    renderPage(currentPage + 1);
-    setTimeout(() => swipeLocked = false, 300); 
-  } else if (touchEndX > touchStartX + 50 && currentPage > 1) {
-    swipeLocked = true;
-    renderPage(currentPage - 1);
-    setTimeout(() => swipeLocked = false, 300);
+    if (touchEndX < touchStartX - 50 && currentPage < totalPages) {
+      swipeLocked = true;
+      renderPage(currentPage + 1);
+      setTimeout(() => swipeLocked = false, 300);
+    } else if (touchEndX > touchStartX + 50 && currentPage > 1) {
+      swipeLocked = true;
+      renderPage(currentPage - 1);
+      setTimeout(() => swipeLocked = false, 300);
+    }
   }
-}
 
 
   // ➕ Swipe doar pe mobil

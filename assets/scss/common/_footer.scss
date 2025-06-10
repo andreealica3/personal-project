@@ -1,6 +1,6 @@
 .footer {
   text-align: center;
-  padding: clamp(1rem, 2vw, 1.3rem) clamp(0.5rem, 2vw, 1rem);
+  padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1rem, 3vw, 2rem) clamp(0.5rem, 3vw, 0.85rem) clamp(1rem, 3vw, 2rem);
   backdrop-filter: blur(8px);
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow:
@@ -21,12 +21,12 @@
       align-items: center;
       gap: clamp(0.1rem, 1vw, 0.2rem);
       color: rgba(50, 50, 50, 0.7);
-      font-size: clamp(0.85rem, 2vw, 0.98rem);
+      font-size: clamp(0.75rem, 1.2vw, 0.8rem);
       text-decoration: none;
       transition: all 0.3s ease;
 
       i.ph {
-        font-size: 1rem;
+        font-size: clamp(0.75rem, 1.2vw, 0.8rem);
         transition: color 0.3s ease;
         color: #5f5b59;
       }

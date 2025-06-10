@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: clamp(1.1rem, 3vw, 1.4rem);
+  padding-top: clamp(0.4rem, 3vw, 0.6rem);
   text-align: center;
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
@@ -13,9 +13,13 @@
   box-shadow: inset 0 0 0.5px rgba(255, 255, 255, 0.4), inset 0 0 6px rgba(255, 255, 255, 0.2), 0 6px 20px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 .navbar .logo {
-  font-size: clamp(1.5rem, 5vw, 1.7rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-weight: 700;
-  color: #8A7158;
+  background: linear-gradient(to right, rgb(68, 52, 205), rgb(219, 136, 184));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 .navbar .menu-toggle {
   display: none;
@@ -23,7 +27,11 @@
   border: none;
   cursor: pointer;
   font-size: clamp(1.8rem, 5vw, 2rem);
-  color: rgba(80, 80, 80, 0.8);
+  background: linear-gradient(to right, rgb(68, 52, 205), rgb(219, 136, 184));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   z-index: 10;
   align-self: flex-end;
   width: auto;
@@ -32,30 +40,28 @@
 .navbar .menu-toggle i {
   pointer-events: none;
 }
-.navbar h1 {
-  font-family: "Comfortaa", sans-serif;
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
-}
-.navbar h1 span {
-  text-shadow: 0.5px 0.5px 0 currentColor;
-}
 .navbar ul {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: clamp(0.8rem, 3vw, 1.5rem);
   position: relative;
-  padding-top: clamp(1rem, 3vw, 1.2rem);
+  padding: clamp(0.6rem, 3vw, 1rem);
 }
 .navbar ul li a {
-  border-radius: 4px;
-  color: #3b3b3b;
+  text-decoration: none;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  color: #000000;
+  padding: 0.45rem 0.8rem;
+  border-radius: 0.2rem;
+  transition: all 0.3s ease;
+}
+.navbar ul li a::after {
+  display: none;
 }
 .navbar ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.266);
-  box-shadow: 0 4px 8px rgba(98, 98, 98, 0.113);
-  transform: translateY(-4px);
-  transition: all 0.4s ease;
+  background-color: rgb(243, 243, 243);
+  box-shadow: 0 4px 8px rgba(210, 210, 210, 0.458);
 }
 .navbar ul li a:active {
   transform: translateY(2px);
@@ -64,16 +70,10 @@
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: stretch;
     width: 100%;
   }
-  .navbar .topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding-top: 1rem;
+  .navbar .logo {
+    display: none;
   }
   .navbar .menu-toggle {
     display: block;
@@ -82,8 +82,6 @@
     width: 100%;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: clamp(0.5rem, 2vw, 0.8rem);
     max-height: 0;
     opacity: 0;
@@ -94,7 +92,7 @@
     overflow: hidden;
   }
   .navbar ul.open {
-    max-height: 300px;
+    max-height: 270px;
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
@@ -105,7 +103,7 @@
   .navbar ul.open li a {
     display: block;
     width: 100%;
-    padding: 1rem;
+    padding: 0.6rem;
     text-align: center;
     font-size: clamp(0.9rem, 1.5vw, 1rem);
     font-weight: 500;
@@ -122,7 +120,7 @@
 }
 .footer {
   text-align: center;
-  padding: clamp(1rem, 2vw, 1.3rem) clamp(0.5rem, 2vw, 1rem);
+  padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1rem, 3vw, 2rem) clamp(0.5rem, 3vw, 0.85rem) clamp(1rem, 3vw, 2rem);
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
   background-color: rgba(255, 255, 255, 0.2);
@@ -140,12 +138,12 @@
   align-items: center;
   gap: clamp(0.1rem, 1vw, 0.2rem);
   color: rgba(50, 50, 50, 0.7);
-  font-size: clamp(0.85rem, 2vw, 0.98rem);
+  font-size: clamp(0.75rem, 1.2vw, 0.8rem);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 .footer .contact-links .contact-link i.ph {
-  font-size: 1rem;
+  font-size: clamp(0.75rem, 1.2vw, 0.8rem);
   transition: color 0.3s ease;
   color: #5f5b59;
 }
@@ -255,7 +253,7 @@ body {
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #f7f6f3;
+  background-color: rgb(243, 243, 243);
   display: flex;
   flex-direction: column;
 }
