@@ -2,31 +2,29 @@
   display: flex;
   width: 100%;
   flex-direction: row;
-  background: #f5f6f8;
+  background-color: rgb(243, 243, 243);
   align-items: stretch;
   overflow: hidden;
   height: 100svh;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 .homepage-hero .hero-text {
   flex: 1;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: center;
-  align-items: center;
   gap: clamp(1.2rem, 1.5vw, 2rem);
-  padding: clamp(0.7rem, 2.5vw, 1.5rem) 0;
-  background-color: rgb(243, 243, 243);
 }
 .homepage-hero .hero-text .header {
-  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 3rem;
+  padding: clamp(0.6rem, 3vw, 1.1rem);
+  font-family: "Poppins", sans-serif;
+  box-shadow: none;
+  background-color: rgb(243, 243, 243);
 }
 .homepage-hero .hero-text .header .hamburger {
   display: none;
@@ -42,6 +40,7 @@
 .homepage-hero .hero-text .header .nav {
   display: flex;
   gap: clamp(0.7rem, 1.5vw, 1rem);
+  padding: 0 0 0 2.5rem;
 }
 .homepage-hero .hero-text .header .nav a {
   text-decoration: none;
@@ -49,7 +48,9 @@
   color: #000000;
   padding: 0.45rem 0.8rem;
   border-radius: 0.2rem;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
 }
 .homepage-hero .hero-text .header .nav a::after {
   display: none;
@@ -65,37 +66,51 @@
 .homepage-hero .hero-text .header .logo {
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-weight: 700;
-  background: linear-gradient(to right, rgb(68, 52, 205), rgb(219, 136, 184));
+  background: linear-gradient(to left, rgb(94, 47, 112), rgb(5, 30, 99));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  padding: 0 clamp(0.6rem, 3vw, 1.1rem);
 }
 .homepage-hero .hero-text .hero-content {
-  max-width: 480px;
+  padding: 0 clamp(0.6rem, 3vw, 1.1rem);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: clamp(1.2rem, 1.5vw, 2rem);
+  text-align: center;
 }
 .homepage-hero .hero-text .hero-content h1 {
-  font-family: "Comfortaa", sans-serif;
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
   margin-bottom: clamp(0.6rem, 1.5vw, 1rem);
+  font-family: "Comfortaa", sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.6);
 }
 .homepage-hero .hero-text .hero-content h1 span {
-  text-shadow: 0.5px 0.5px 0 currentColor;
+  text-shadow: 0.6px 0.6px 0 currentColor;
+}
+.homepage-hero .hero-text .hero-content h2 {
+  color: rgba(27, 36, 62, 0.85);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  display: inline-block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
 }
 .homepage-hero .hero-text .hero-content p {
-  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-  margin-bottom: clamp(1rem, 2vw, 1.5rem);
-  color: #6B5F52;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: rgba(0, 0, 0, 0.7529411765);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  padding: 0 clamp(3.5rem, 3vw, 1.5rem);
+  font-family: "Roboto", sans-serif;
 }
 .homepage-hero .hero-text .hero-content .hero-buttons {
   display: flex;
-  align-items: center;
   gap: clamp(0.5rem, 1.5vw, 1rem);
-  margin-top: clamp(1rem, 2.5vw, 2rem);
+  justify-content: center;
 }
 .homepage-hero .hero-text .hero-content .hero-buttons .email-me {
   display: inline-flex;
@@ -147,10 +162,9 @@
 .homepage-hero .hero-text .hero-logos {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
   gap: clamp(0.6rem, 1.5vw, 1rem);
   margin-top: clamp(1.5rem, 3vw, 1.8rem);
+  justify-content: center;
 }
 .homepage-hero .hero-text .hero-logos .card {
   width: clamp(80px, 8vw, 95px);
@@ -187,18 +201,16 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: 0.5px;
+  width: 1px;
   height: 100svh;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0.6) 100%);
 }
 .homepage-hero .mini-footer {
   width: 100%;
   display: flex;
-  padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1rem, 3vw, 2rem) clamp(0.5rem, 3vw, 0.85rem) clamp(1rem, 3vw, 2rem);
+  padding: clamp(0.7rem, 2.5vw, 1.5rem);
   flex-direction: column;
   gap: clamp(0.3rem, 1vw, 0.6rem);
-  border-top: 1px solid rgba(236, 236, 236, 0.65);
-  box-shadow: 4px -4px 15px rgba(169, 169, 169, 0.1);
   align-items: stretch;
 }
 .homepage-hero .mini-footer .mini-link {
@@ -240,28 +252,45 @@
   -o-object-fit: contain;
      object-fit: contain;
 }
+
 @media (max-width: 650px) {
-  .homepage-hero .homepage-hero {
-    flex: none;
+  .homepage-hero {
     height: auto;
     min-height: 100vh;
   }
+  .homepage-hero .hero-image {
+    display: none;
+  }
   .homepage-hero .hero-text {
     position: relative;
+    padding: 0;
+  }
+  .homepage-hero .hero-text .hero-content {
+    align-items: center;
+    padding: 0 1rem;
+  }
+  .homepage-hero .hero-text .hero-content p {
+    padding: 1rem;
   }
   .homepage-hero .hero-text .header {
     width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(210, 210, 210, 0.458);
+  }
+  .homepage-hero .hero-text .header .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem clamp(1rem, 3vw, 1.5rem);
   }
   .homepage-hero .hero-text .header .logo {
-    display: none;
+    padding: 0;
   }
   .homepage-hero .hero-text .header .hamburger {
     display: block;
-    border-bottom: 1px solid rgba(236, 236, 236, 0.65);
-    padding-bottom: 1rem;
   }
   .homepage-hero .hero-text .header .nav {
     display: flex;
@@ -278,36 +307,23 @@
     transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
     z-index: 999;
   }
-  .homepage-hero .hero-text .header .nav.open {
-    max-height: 300px;
-    opacity: 1;
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-  .homepage-hero .hero-text .header .nav.open a {
+  .homepage-hero .hero-text .header .nav a {
     display: block;
     width: 100%;
     padding: clamp(0.5rem, 4vw, 1rem) clamp(0.6rem, 3vw, 0.8rem);
     text-align: center;
-    box-shadow: none;
-    transform: none;
-    text-shadow: none;
-    background: none;
-    background-clip: initial;
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: initial;
     text-decoration: none;
   }
-  .homepage-hero .hero-text .header .nav.open a::after {
-    display: none;
+  .homepage-hero .hero-text .header .nav.open {
+    max-height: 300px;
+    opacity: 1;
+    padding: 1rem;
   }
-  .homepage-hero .hero-text .header .nav.open a:hover {
-    color: inherit;
+  .homepage-hero .hero-text .mini-footer {
+    padding: 1rem;
+    border-top: 1px solid rgba(210, 210, 210, 0.458);
   }
-  .homepage-hero .hero-image {
-    display: none;
-  }
-  .homepage-hero .section-divider {
-    display: none;
+  .header.no-border {
+    border-bottom: none !important;
   }
 }
