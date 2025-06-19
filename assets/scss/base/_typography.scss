@@ -1,0 +1,82 @@
+@import '../utilities/variables';
+@import '../utilities/fonts';
+
+html {
+  font-size: 100%; 
+}
+
+body {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  color: $text-primary;
+  line-height: 1.6;
+}
+
+
+h1 {
+  font-family: $font-playfair; 
+  font-weight: 700;
+  color: $text-primary;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+h2, h3, h4 {
+  font-family: $font-secondary; 
+  font-weight: 700;
+  color: $text-primary;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: clamp(1.2rem, 5vw, 2rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+h5 {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+}
+
+h6 {
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+}
+
+
+p {
+  font-family: $font-third;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  color: $text-secondary;
+}
+
+a {
+  color: $accent-2;
+  text-decoration: none;
+  font-family: $font-third;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+// ===== LISTS =====
+ul, ol {
+  margin-bottom: 1.2rem;
+}
+
+li {
+  line-height: 1.8;
+}
+
+

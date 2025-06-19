@@ -1,0 +1,52 @@
+// Grayscale & Backgrounds
+$black: #000000;
+$dark-gray: #1a1a1a;
+$charcoal: #212121;
+$slate: #3a3a3a;
+$white: #ffffff;
+$off-white: #f0f0f0;
+$silver: #c0c0c0;
+
+// Accents
+$soft-gold: #c7a955;
+$warm-beige: #c8baaa;
+$deep-blue: #3a5a98;
+$royal-purple: #6b4c9a;
+$emerald: #2e8b57;
+$teal: #3ccfcf;
+$rose: #ff4f81;
+$burnt-orange: #ff774e;
+
+// COLOR SEMANTICS
+$primary-bg: $black;
+$secondary-bg: $dark-gray;
+
+$text-primary: $off-white;
+$text-secondary: $silver;
+
+$accent-1: $soft-gold;
+$accent-2: $warm-beige;
+$accent-3: $rose;
+$accent-4: $deep-blue;
+
+$hover-color: $soft-gold;
+$active-color: $royal-purple;
+
+
+// FONT STACKS
+$font-lexend: 'Lexend', sans-serif;
+$font-poppins: 'Poppins', sans-serif;
+$font-playfair: "Playfair Display", sans-serif;
+
+// Usage presets
+$font-primary: $font-playfair;      
+$font-secondary: $font-lexend;    
+$font-third: $font-poppins;     
+
+// Z-INDEXES 
+$z-header: 1000;
+$z-modal: 2000;
+$z-overlay: 3000;
+
+// TRANSITIONS 
+$transition-default: all 0.3s ease;

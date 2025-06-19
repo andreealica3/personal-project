@@ -1,0 +1,107 @@
+body {
+    background-color: $secondary-bg;
+
+
+    .main-layout {
+        display: flex;
+        flex-direction: row;
+        min-height: 100vh;
+
+        .sidebar {
+            position: relative;
+            flex: 0 0 clamp(240px, 30vw, 400px);
+            padding: clamp(1rem, 2vw, 2rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: clamp(1.8rem, 2vh, 2.3rem);
+            background-color: $charcoal;
+
+            .profile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: clamp(0.5rem, 1vh, 1rem);
+
+                .profile-photo {
+                    width: clamp(100px, 40%, 150px);
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+            }
+
+            .main-menu {
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: clamp(0.6rem, 1.2vh, 1rem);
+                    list-style: none;
+                    text-align: center;
+
+                    li {
+                        a {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                gap: clamp(0.5rem, 2vw, 1.2rem);
+            }
+
+            .copyright {
+                text-align: center;
+                text-align: center;
+                margin-top: auto;
+            }
+        }
+
+        .content {
+            flex: 1;
+            padding: clamp(1rem, 4vw, 3rem);
+
+            #dynamic-section {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .mobile-footer {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .main-layout {
+            flex-direction: column;
+        }
+
+        .sidebar,
+        .content {
+            width: 100%;
+            flex: none;
+        }
+
+        .content {
+            order: 2;
+        }
+
+        .sidebar .copyright {
+            display: none;
+        }
+
+        .mobile-footer {
+            order: 3;
+            display: block;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.8rem;
+            color: $text-secondary;
+        }
+    }
+}
