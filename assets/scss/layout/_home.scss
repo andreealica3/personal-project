@@ -7,36 +7,69 @@ body {
         flex-direction: row;
         min-height: 100vh;
 
+
         .sidebar {
             position: relative;
-            flex: 0 0 clamp(240px, 30vw, 400px);
-            padding: clamp(1rem, 2vw, 2rem);
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            gap: clamp(1.8rem, 2vh, 2.3rem);
+            flex: 0 0 clamp(100px, 30vw, 380px);
+            height: 100vh;
+            display: flex;
             background-color: $charcoal;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow:
+                0 2px 4px rgba(0, 0, 0, 0.08),
+                0 6px 18px rgba(0, 0, 0, 0.12),
+                inset 0 0.5px 0 rgba(255, 255, 255, 0.03),
+                0 0 6px rgba(255, 255, 255, 0.02),
+                0 0 0 1px rgba(255, 255, 255, 0.04);
 
             .profile {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
                 text-align: center;
-                gap: clamp(0.5rem, 1vh, 1rem);
+                gap: clamp(1.5rem, 1vh, 1.8rem);
+                margin-bottom: 2.5rem;
 
-                .profile-photo {
-                    width: clamp(100px, 40%, 150px);
-                    border-radius: 50%;
-                    object-fit: cover;
+                h1 {
+                    margin-top: 2rem;
+                    padding-top: 2rem;
                 }
 
             }
 
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+                width: 30px;
+                height: 30px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                margin: 0 auto;
+                margin-top: 0.8rem;
+
+                span {
+                    display: block;
+                    height: 2px;
+                    width: 100%;
+                    background-color: $text-primary;
+                    border-radius: 2px;
+                    transition: all 0.3s ease;
+                }
+            }
+
             .main-menu {
+                margin-top: 2.5rem;
+                padding-top: 2.5rem;
+                flex-grow: 1;
+
                 ul {
                     display: flex;
                     flex-direction: column;
-                    gap: clamp(0.6rem, 1.2vh, 1rem);
+                    gap: clamp(1.5rem, 1.2vh, 1.8rem);
                     list-style: none;
                     text-align: center;
 
@@ -48,26 +81,92 @@ body {
                 }
             }
 
+
+            .photo-wrapper {
+                padding-top: 1rem;
+                position: relative;
+                justify-content: center;
+
+                .profile-photo {
+                    transform: scaleX(-1);
+                    opacity: 0.9;
+                }
+
+                &::after {
+                    content: '';
+                    display: block;
+                    height: 1px;
+                    width: 100%;
+                    background: linear-gradient(to right,
+                            transparent,
+                            #3535358f,
+                            transparent);
+                    border-radius: 1px;
+                    margin-bottom: 1rem;
+                }
+            }
+
             .social-icons {
                 display: flex;
                 justify-content: center;
                 gap: clamp(0.5rem, 2vw, 1.2rem);
+
+                .facebook {
+                    color:
+                        rgb(108, 163, 188);
+
+                    &:hover {
+                        transform: scale(1.04);
+                        color: #1876f2bc;
+                    }
+                }
+
+                .instagram {
+                    color:
+                        rgb(250, 178, 216);
+
+                    &:hover {
+                        transform: scale(1.04);
+                        color: #c13584b8;
+                    }
+                }
+
+                .linkedin {
+                    color:
+                        rgb(14, 88, 126);
+
+                    &:hover {
+                        transform: scale(1.04);
+                        color: #0076b5d1;
+                    }
+                }
+
+                .github {
+                    &:hover {
+                        transform: scale(1.04);
+                        color: rgba(255, 255, 255, 0.82);
+                    }
+                }
             }
 
             .copyright {
                 text-align: center;
-                text-align: center;
                 margin-top: auto;
+                padding: clamp(0.85rem, 2vw, 1.2rem);
             }
         }
 
+
         .content {
+            position: relative;
             flex: 1;
             padding: clamp(1rem, 4vw, 3rem);
 
             #dynamic-section {
+                position: relative;
                 max-width: 800px;
                 margin: 0 auto;
+                z-index: 1;
             }
         }
     }
@@ -79,29 +178,68 @@ body {
     @media (max-width: 768px) {
         .main-layout {
             flex-direction: column;
-        }
 
-        .sidebar,
-        .content {
-            width: 100%;
-            flex: none;
-        }
+            .sidebar {
+                width: 100%;
+                order: 1;
 
-        .content {
-            order: 2;
-        }
+                .hamburger {
+                    display: flex;
+                }
 
-        .sidebar .copyright {
-            display: none;
-        }
+                .profile {
+                    margin-bottom: 0;
 
-        .mobile-footer {
-            order: 3;
-            display: block;
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.8rem;
-            color: $text-secondary;
+                    h1 {
+                        margin: 0;
+                        padding-top: 1rem;
+                    }
+                }
+
+                .main-menu {
+                    margin: 0;
+                    padding: 1rem;
+                    ul {
+                    display: none;
+                    flex-direction: column;
+                    gap: 1rem;
+                    margin-top: 1rem;
+
+                    &.active {
+                        display: flex;
+                    }
+                }
+            }
+
+                .photo-wrapper {
+                    display: none;
+                }
+
+                .social-icons {
+                    margin-bottom: 1rem;
+                }
+
+                .copyright {
+                    display: none;
+                }
+            }
+
+            .content {
+                order: 2;
+
+                #dynamic-section {
+                    text-align: center;
+                }
+            }
+
+            .mobile-footer {
+                order: 3;
+                display: block;
+                text-align: center;
+                padding: 1rem;
+                font-size: 2rem;
+                color: $text-secondary;
+            }
         }
     }
 }

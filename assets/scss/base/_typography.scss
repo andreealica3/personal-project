@@ -17,7 +17,6 @@ h1 {
   font-weight: 700;
   color: $text-primary;
   line-height: 1.2;
-  margin-bottom: 0.5em;
 }
 
 h2, h3, h4 {
@@ -25,7 +24,6 @@ h2, h3, h4 {
   font-weight: 700;
   color: $text-primary;
   line-height: 1.2;
-  margin-bottom: 0.5em;
 }
 
 h1 {
@@ -49,7 +47,10 @@ h5 {
 }
 
 h6 {
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+  color: $text-secondary;
+  font-family: $font-third;
+  font-weight: 300;
 }
 
 
@@ -63,11 +64,6 @@ a {
   color: $accent-2;
   text-decoration: none;
   font-family: $font-third;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: $hover-color;
-  }
 }
 
 // ===== LISTS =====
